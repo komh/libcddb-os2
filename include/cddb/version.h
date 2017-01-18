@@ -6,7 +6,7 @@
  */
 
 /*! CDDB_VERSION can as a string in programs to show what version is used. */
-#define CDDB_VERSION "1.3.2 i686-pc-linux-gnu"
+#define CDDB_VERSION "1.3.2 i386-pc-os2-emx"
 
 /*! LIBCDDB_VERSION_NUM  can be used for testing in the C preprocessor */
 #define LIBCDDB_VERSION_NUM 131
