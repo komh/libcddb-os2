@@ -44,10 +44,11 @@ cddb_disc_t *cd_read(char *device)
     track_t cnt, t;             /* track counters */
     lba_t lba;                  /* Logical Block Address */
     int *foffset = NULL;        /* list of frame offsets */
+    char *default_device = NULL;/* name of the default CD-ROM device */
 
     /* Get the name of the default CD-ROM device. */
     if (!device) {
-        device = cdio_get_default_device(NULL);
+        device = default_device = cdio_get_default_device(NULL);
         if (!device) {
             libcdio_error_exit("unable to get default CD device");
         }
@@ -103,7 +104,7 @@ cddb_disc_t *cd_read(char *device)
 
     /* more clean up */
     FREE_NOT_NULL(foffset);
-    FREE_NOT_NULL(device);
+    FREE_NOT_NULL(default_device);
 
 #endif
 
